@@ -7,4 +7,6 @@
                 [ring/ring-core "1.9.5"]
                 [ring/ring-jetty-adapter "1.9.5"]
                 [compojure "1.6.2"]]
+  :plugins [[lein-ring "0.12.5"]]
+  :ring {:handler shows-api.core/app}
   :repl-options {:init-ns shows-api.core})
