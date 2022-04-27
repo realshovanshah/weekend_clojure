@@ -6,7 +6,9 @@
   :dependencies [[org.clojure/clojure "1.10.3"]
                 [ring/ring-core "1.9.5"]
                 [ring/ring-jetty-adapter "1.9.5"]
-                [compojure "1.6.2"]]
+                [compojure "1.6.2"]
+                [com.github.seancorfield/next.jdbc "1.2.780"]
+                [org.xerial/sqlite-jdbc "3.36.0.3"]]
   :plugins [[lein-ring "0.12.5"]]
   :ring {:handler shows-api.core/app}
   :repl-options {:init-ns shows-api.core})
