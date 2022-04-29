@@ -6,6 +6,7 @@
   :dependencies [[org.clojure/clojure "1.10.3"]
                 [ring/ring-core "1.9.5"]
                 [ring/ring-jetty-adapter "1.9.5"]
+                [metosin/muuntaja "0.6.8"]
                 [compojure "1.6.2"]
                 [seancorfield/next.jdbc "1.2.659"]
                 [org.xerial/sqlite-jdbc "3.36.0.3"]]

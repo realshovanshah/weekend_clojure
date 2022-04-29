@@ -11,7 +11,7 @@
 ;; (delete-show! 3)
 
 (defn get-show-by-id [id]
-    (str (first (db/get-show-by-id id))))
+     (first (db/get-show-by-id id)))
 
 (defn create-show! [show]
   (db/create-show! show))
