@@ -91,3 +91,31 @@
   (future (println "Here's some Ferengi wisdom:" @ferengi-wisdom-promise))
   (Thread/sleep 100)
   (deliver ferengi-wisdom-promise "Whisper your way to success."))
+
+
+(def fred (atom {:cuddle-hunger-level 0
+                 :percent-deteriorated 0}))
+
+(let [zombie-state @fred]
+  (if (>= (:percent-deteriorated zombie-state) 50)
+    (future (println (:cuddle-hunger-level zombie-state)))))
+
+(swap! fred
+       (fn [current-state]
+         (merge-with + current-state {:cuddle-hunger-level 1})))
+(swap! fred
+       (fn [current-state]
+         (merge-with + current-state {:cuddle-hunger-level 1
+                                      :percent-deteriorated 1})))
+(swap! fred update-in [:cuddle-hunger-level] + 10)
+
+(let [num (atom 1)
+      s1 @num]
+  (swap! num inc)
+  (println "State 1:" s1)
+  (println "Current state:" @num))
+
+(reset! fred {:cuddle-hunger-level 0
+              :percent-deteriorated 0})
+
+
