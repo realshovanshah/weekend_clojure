@@ -106,3 +106,11 @@
     (= channel c2)))
 
 
+;; go talk
+(defn boring [] 
+  (dotimes [n 5]4
+    (prn n)))
+
+;; channels both send/receive & syncronize in a single operation
+(let [c (chan)]
+  (go boring)))
